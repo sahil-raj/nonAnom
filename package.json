@@ -1,0 +1,32 @@
+{
+  "name": "nonanom",
+  "version": "1.0.0",
+  "description": "erc-20 token with ability to track down the holders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahil-raj/nonAnom.git"
+  },
+  "keywords": [
+    "solidity",
+    "blockchain",
+    "erc-20"
+  ],
+  "author": "https://sahilraj.xyz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sahil-raj/nonAnom/issues"
+  },
+  "homepage": "https://github.com/sahil-raj/nonAnom#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.21.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5"
+  }
+}
