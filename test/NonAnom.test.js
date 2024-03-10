@@ -21,5 +21,9 @@ describe("NonAnom contract tests", () => {
             expect(await refContract.balanceOf(owner.address)).to.equal(await refContract.totalSupply());
         });
 
+        it("should assign unique hash to deployer", async () => {
+            expect(await refContract.userList(owner.address)).to.equal(await refContract.getUid(SHA256("1234567890").toString()));
+        });
+
     });
 });
