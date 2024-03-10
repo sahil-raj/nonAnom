@@ -14,6 +14,12 @@ describe("NonAnom contract tests", () => {
     describe("deployment", async () => {
         it("should mint 10000 * 10^18 tokens (10^18 being decimals part)", async () => {
             expect(await refContract.totalSupply()).to.equal(BigInt(10000000000000000000000));
+            // console.log(await refContract.runner.address, owner.address);
         });
+
+        it("should mint all the tokens to deployer", async () => {
+            expect(await refContract.balanceOf(owner.address)).to.equal(await refContract.totalSupply());
+        });
+
     });
 });
