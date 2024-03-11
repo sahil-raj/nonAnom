@@ -14,7 +14,6 @@ describe("NonAnom contract tests", () => {
     describe("deployment", async () => {
         it("should mint 10000 * 10^18 tokens (10^18 being decimals part)", async () => {
             expect(await refContract.totalSupply()).to.equal(BigInt(10000000000000000000000));
-            // console.log(await refContract.runner.address, owner.address);
         });
 
         it("should mint all the tokens to deployer", async () => {
@@ -25,5 +24,15 @@ describe("NonAnom contract tests", () => {
             expect(await refContract.userList(owner.address)).to.equal(await refContract.getUid(SHA256("1234567890").toString()));
         });
 
+        it("should have name and symbol as nonAnom NAT", async () => {
+            expect(await refContract.name()).to.equal("nonAnom");
+            expect(await refContract.symbol()).to.equal("NAT");
+        });
+    });
+
+    describe("regsiterUser", async () => {
+        // it("shouldn't register usser if it's not the caller", async () => {
+        //     expect(await refContract.registerUser(add1.address, SHA256("1234567890").toString())).to.be.revertedWith();
+        // });
     });
 });
