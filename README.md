@@ -13,5 +13,5 @@ hardhat, solidity, ether.js, chai.js
 
 ## Frontend
 
-frontend part of the [portfolio](https://github.com/sahil-raj/nonAnom-ui) 
+frontend part [nonAnom-ui](https://github.com/sahil-raj/nonAnom-ui) 
 
