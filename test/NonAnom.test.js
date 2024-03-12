@@ -47,4 +47,12 @@ describe("NonAnom contract tests", () => {
             expect(await refContract.getUid(SHA256("1234567890").toString())).to.equal(y);
         });
     });
+
+    describe("transfer", () => {
+        it("shouldn't transfer if reciever not registered", async () => {
+            await expect(refContract.transfer(add1.address, 100)).to.revertedWith("reciever not found please ask them to register");
+
+            await expect(refContract.transfer(add1.address, 100)).to.revertedWith("reciever not found please ask them to register");
+        });
+    });
 });
