@@ -42,6 +42,9 @@ describe("NonAnom contract tests", () => {
 
     describe("getUid", () => {
         it("should generate correct hash", async () => {
+            const t = await ethers.utils.defaultAbiCoder.encode(['string', 'address'], [SHA256("1234567890").toString() ,owner.address]);
+            const y = await ethers.utils.solidityKeccak256(['bytes'], [t]);
+            expect(await refContract.getUid(SHA256("1234567890").toString())).to.equal(y);
         });
     });
 });

@@ -20,7 +20,7 @@ contract NonAnom is ERC20 {
 
     //function to create uid of an user using the hash(sha256) of the uid by the user and its wallet id
     function getUid(string memory _uid) public view returns(bytes32) {
-        return keccak256(abi.encodePacked(_uid, msg.sender));
+        return keccak256(abi.encode(_uid, msg.sender));
     }
 
     //override the transfer function to make sure that uid must be there
