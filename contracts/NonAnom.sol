@@ -48,3 +48,6 @@ contract NonAnom is ERC20 {
         return true;
     }
 }
+
+//txn 0x8830bae961c49832c42e59c8649aec0c6611fa848538816032888ac5c3bb0c91
+//contract 0x64da958ea643cb18a15f280a278b93ea755803a6
