@@ -11,7 +11,7 @@ describe("NonAnom contract tests", () => {
         refContract = await NonAnom.deploy(SHA256("1234567890").toString());
     });
 
-    describe("deployment", async () => {
+    describe("deployment", () => {
         it("should mint 10000 * 10^18 tokens (10^18 being decimals part)", async () => {
             expect(await refContract.totalSupply()).to.equal(BigInt(10000000000000000000000));
         });
@@ -30,9 +30,18 @@ describe("NonAnom contract tests", () => {
         });
     });
 
-    describe("regsiterUser", async () => {
-        // it("shouldn't register usser if it's not the caller", async () => {
-        //     expect(await refContract.registerUser(add1.address, SHA256("1234567890").toString())).to.be.revertedWith();
-        // });
+    describe("regsiterUser", () => {
+        it("shouldn't register usser if it's not the caller", async () => {
+            await expect(refContract.registerUser(add1.address, SHA256("1234567890").toString())).to.be.revertedWith("calling party not registering");
+        });
+        it("should map into userList", async () => {
+            await refContract.registerUser(owner.address, SHA256("1234567890").toString());
+            expect(await refContract.userList(owner.address)).to.not.equal("");
+        });
+    });
+
+    describe("getUid", () => {
+        it("should generate correct hash", async () => {
+        });
     });
 });
